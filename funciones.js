@@ -299,9 +299,3 @@ function cambiarMenos(){
         
       }
 }
-
-$(document).ready(function() {
-    $("[list='listamodelos']").on("input propertychange", function() {
-      window.location = $("#listamodelos option[value='"+$("[list='listamodelos']").val()+"']").find("a").attr("href")
-    });
-  });
