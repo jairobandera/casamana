@@ -299,3 +299,21 @@ function cambiarMenos(){
         
       }
 }
+
+
+function cambiarNotas(){
+    let cambiar = document.querySelector("#cambiarNota");
+    let NotaOriginal = document.querySelector("body > pre").getElementsByClassName("nota");
+    let valoresMayores =   {do: "1", re: "2", mi:"3", fa:"4", sol:"5", la:"6", si:"7"};
+    let valoresSostenidos = {dosos: "8", resos:"9", misos:"10", fasos:"11", solsos:"12", lasos:"13"};
+    let valoresMenores =  {dom: "14", rem: "15", mim:"16", fam:"17", solm:"18", lam:"19", sim:"20"};
+    //NotaOriginal[0].innerText
+    //cambiar.value == "do"
+    //valores[0].key = "do#";
+    //valores[0].value = "8";
+
+    if(cambiar.value == "do" || cambiar.value == "re" || cambiar.value == "mi" || cambiar.value == "fa" || cambiar.value == "sol" || cambiar.value == "la" || cambiar.value == "si"){
+        alert("Para emocion, todavia no esta programada esa parte :)");
+    }
+}
+

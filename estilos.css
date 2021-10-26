@@ -16,3 +16,10 @@ b{
 pre{
     font-size: 15px;
 }
+
+#cambiarNota{
+    width: auto;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    background-color: #0dcaf0;
+}
