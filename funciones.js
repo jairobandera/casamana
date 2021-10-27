@@ -315,5 +315,8 @@ function cambiarNotas(){
     if(cambiar.value == "do" || cambiar.value == "re" || cambiar.value == "mi" || cambiar.value == "fa" || cambiar.value == "sol" || cambiar.value == "la" || cambiar.value == "si"){
         alert("Para emocion, todavia no esta programada esa parte :)");
     }
+
+    
 }
+
 
