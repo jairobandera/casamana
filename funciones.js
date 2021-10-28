@@ -320,3 +320,42 @@ function cambiarNotas(){
 }
 
 
+function abrirDo(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/do.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function abrirRe(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/re.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function abrirMi(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/mi.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function abrirFa(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/fa.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function abrirSol(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/sol.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function abrirLa(){
+    let nota = document.getElementById("imagenNotas");
+    nota.src = "img/la.png";
+    document.getElementById("vent").style.display = "block";
+}
+
+function cerrar(){
+    document.getElementById("vent").style.display = "none";
+}

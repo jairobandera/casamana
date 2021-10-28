@@ -4,6 +4,12 @@
     margin-bottom: 20px;
 }
 
+.titulo2{
+    margin-top: -20%;
+    margin-right: 40%;
+    margin-bottom: 2%;
+}
+
 b{
     color: blue;
     font-size: 15px;
@@ -23,3 +29,68 @@ pre{
     margin-left: 5px;
     background-color: #0dcaf0;
 }
+
+.ventana{
+    background: gray;
+    width: 20%;
+    height: auto;
+    color: rgba(255, 255, 255, 1);
+    font-size: 18px;
+    text-align: center;
+    padding: 30px;
+    border-radius: 22px;
+    position: absolute;
+    left: 34%;
+    top: 50%;
+    display: none;
+    z-index: 2;
+}
+
+#cerrar{
+    position: absolute;
+    right: 8px;
+    top: 1px;
+}
+
+@media (max-width: 300px) { 
+    .ventana{
+        width: 50%;
+        height: auto;
+    }
+
+}
+
+/* Small devices (landscape phones, 576px and up)*/
+@media (max-width: 576px) { 
+    .ventana{
+        width: 50%;
+        height: auto;
+    } 
+}
+
+/* Medium devices (tablets, 768px and up)*/
+@media (min-width: 768px) { 
+
+}
+
+/* Large devices (desktops, 992px and up)*/
+@media (min-width: 992px) { 
+    .ventana{
+        width: 20%;
+        height: auto;
+    } 
+}
+
+/* X-Large devices (large desktops, 1200px and up)*/
+@media (min-width: 1200px) { 
+    .ventana{
+        width: 20%;
+        height: auto;
+    } 
+}
+
+/* XX-Large devices (larger desktops, 1400px and up)*/
+@media (min-width: 1400px) { 
+
+}
+
