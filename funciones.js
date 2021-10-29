@@ -1,3 +1,19 @@
+
+function buscarCancion(){
+    let cancion = document.getElementById("buscar").value;
+    cancion = cancion.replace(/ /g, "").toLowerCase();
+
+    if(cancion == 'enlosmontes'){
+        location.href ="plantillas/enlosmontes.html";
+        }
+         else if(cancion == 'medeleitoenti'){
+          location.href="plantillas/medeleitoenti.html";
+        }else{
+            location.href="index.html";
+        }
+}
+
+
 function cambiarMas(){
     let notas = document.querySelector("body > pre").getElementsByClassName("nota");
     
