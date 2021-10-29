@@ -11,7 +11,32 @@ function buscarCancion(){
         }else{
             location.href="index.html";
         }
+
 }
+
+function buscarCancion2(){
+    let input = document.getElementById("buscar");
+
+    input.addEventListener("keyup", function(event) {
+        // Number 13 is the "Enter" key on the keyboard
+        if (event.keyCode === 13) {
+
+        let cancion = document.getElementById("buscar").value;
+        cancion = cancion.replace(/ /g, "").toLowerCase();
+
+        if(cancion == 'enlosmontes'){
+            location.href ="plantillas/enlosmontes.html";
+            }
+            else if(cancion == 'medeleitoenti'){
+            location.href="plantillas/medeleitoenti.html";
+            }else{
+                location.href="index.html";
+            }
+        }
+});
+}
+
+
 
 
 function cambiarMas(){
