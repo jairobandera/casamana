@@ -5,10 +5,11 @@ function buscarCancion(){
 
     if(cancion == 'enlosmontes'){
         location.href ="plantillas/enlosmontes.html";
-        }
-         else if(cancion == 'medeleitoenti'){
+        }else if(cancion == 'medeleitoenti'){
           location.href="plantillas/medeleitoenti.html";
-        }else{
+        }else if(cancion == 'unadorador'){
+            location.href="plantillas/unadorador.html";
+          }else{
             location.href="index.html";
         }
 
@@ -26,12 +27,13 @@ function buscarCancion2(){
 
         if(cancion == 'enlosmontes'){
             location.href ="plantillas/enlosmontes.html";
-            }
-            else if(cancion == 'medeleitoenti'){
-            location.href="plantillas/medeleitoenti.html";
-            }else{
+            }else if(cancion == 'medeleitoenti'){
+              location.href="plantillas/medeleitoenti.html";
+            }else if(cancion == 'unadorador'){
+                location.href="plantillas/unadorador.html";
+              }else{
                 location.href="index.html";
-            }
+           }
         }
 });
 }
