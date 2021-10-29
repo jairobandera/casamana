@@ -37,8 +37,6 @@ function buscarCancion2(){
 }
 
 
-
-
 function cambiarMas(){
     let notas = document.querySelector("body > pre").getElementsByClassName("nota");
     
