@@ -9,7 +9,9 @@ function buscarCancion(){
           location.href="plantillas/medeleitoenti.html";
         }else if(cancion == 'unadorador'){
             location.href="plantillas/unadorador.html";
-          }else{
+        }else if(cancion == 'haylibertad'){
+            location.href="plantillas/haylibertad.html";
+        }else{
             location.href="index.html";
         }
 
@@ -31,7 +33,9 @@ function buscarCancion2(){
               location.href="plantillas/medeleitoenti.html";
             }else if(cancion == 'unadorador'){
                 location.href="plantillas/unadorador.html";
-              }else{
+            }else if(cancion == 'haylibertad'){
+                location.href="plantillas/haylibertad.html";
+            }else{
                 location.href="index.html";
            }
         }
