@@ -1,3 +1,7 @@
+function imprimir(){
+    print();
+}
+
 
 function buscarCancion(){
     let cancion = document.getElementById("buscar").value;
