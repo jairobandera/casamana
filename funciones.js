@@ -15,6 +15,8 @@ function buscarCancion(){
             location.href="plantillas/unadorador.html";
         }else if(cancion == 'haylibertad'){
             location.href="plantillas/haylibertad.html";
+        }else if(cancion == 'queseabraelcielo'){
+            location.href="plantillas/queseabraelcielo.html";
         }else{
             location.href="index.html";
         }
@@ -39,6 +41,8 @@ function buscarCancion2(){
                 location.href="plantillas/unadorador.html";
             }else if(cancion == 'haylibertad'){
                 location.href="plantillas/haylibertad.html";
+            }else if(cancion == 'queseabraelcielo'){
+                location.href="plantillas/queseabraelcielo.html";
             }else{
                 location.href="index.html";
            }
