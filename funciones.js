@@ -19,6 +19,8 @@ function buscarCancion(){
             location.href="plantillas/queseabraelcielo.html";
         }else if(cancion == 'cuanbelloeselseñor'){
             location.href="plantillas/cuanbelloeselsenior.html";
+        }else if(cancion == 'algoestacayendoaqui'){
+            location.href="plantillas/estacayendo.html";
         }else{
             location.href="index.html";
         }
@@ -47,6 +49,8 @@ function buscarCancion2(){
                 location.href="plantillas/queseabraelcielo.html";
             }else if(cancion == 'cuanbelloeselseñor'){
                 location.href="plantillas/cuanbelloeselsenior.html";
+            }else if(cancion == 'algoestacayendoaqui'){
+                location.href="plantillas/estacayendo.html";
             }else{
                 location.href="index.html";
            }
