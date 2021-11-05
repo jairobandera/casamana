@@ -21,6 +21,8 @@ function buscarCancion(){
             location.href="plantillas/cuanbelloeselsenior.html";
         }else if(cancion == 'algoestacayendoaqui'){
             location.href="plantillas/estacayendo.html";
+        }else if(cancion == 'entupresenciadanzamos'){
+            location.href="plantillas/entupresenciadanzamos.html";
         }else{
             location.href="index.html";
         }
@@ -51,6 +53,9 @@ function buscarCancion2(){
                 location.href="plantillas/cuanbelloeselsenior.html";
             }else if(cancion == 'algoestacayendoaqui'){
                 location.href="plantillas/estacayendo.html";
+            }
+            else if(cancion == 'entupresenciadanzamos'){
+                location.href="plantillas/entupresenciadanzamos.html";
             }else{
                 location.href="index.html";
            }
