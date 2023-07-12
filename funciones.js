@@ -2,6 +2,92 @@ function imprimir(){
     print();
 }
 
+// Función para eliminar todos los datos del Local Storage
+function eliminarLocalStorage() {
+    localStorage.clear();
+}
+
+// Función para buscar y mostrar los datos almacenados en el Local Storage
+function mostrarDatosLocalStorage() {
+    // Obtener los datos del Local Storage
+    var datos = localStorage.getItem('divContent');
+  
+    // Verificar si hay datos almacenados
+    if (datos) {
+      // Crear el elemento <div>
+      var divTemporal = document.createElement('div');
+
+      // Establecer las clases CSS
+      divTemporal.className = 'list-group myUL';
+
+      // Establecer el estilo inline
+      divTemporal.style.width = '45%';
+  
+      // Asignar los datos del Local Storage al contenido del div temporal
+      divTemporal.innerHTML = datos;
+  
+      // Obtener el elemento <div> deseado
+      var divAlmacenado = divTemporal.firstChild;
+  
+      // Agregar el elemento <div> al documento
+      document.body.appendChild(divAlmacenado);
+    }
+  }
+  
+  // Llamar a la función para mostrar los datos del Local Storage
+  mostrarDatosLocalStorage();
+  
+
+function guardarCanciones(){
+    let cancion = document.getElementById("buscar").value;
+    cancion = cancion.replace(/ /g, "").toLowerCase();
+
+    if(cancion == 'enlosmontes'){
+        // Crear el elemento <div>
+        var div = document.createElement('div');
+
+        // Establecer las clases CSS
+        div.className = 'list-group myUL';
+
+        // Establecer el estilo inline
+        div.style.width = '45%';
+
+        // Crear el elemento <a>
+        var link = document.createElement('a');
+
+        // Establecer el atributo href
+        link.href = 'plantillas/enlosmontes.html';
+
+        // Establecer las clases CSS
+        link.className = 'list-group-item list-group-item-action text-center';
+
+        // Establecer los estilos inline
+        link.style.backgroundColor = '#198754';
+        link.style.marginBottom = '5px';
+        link.style.marginLeft = '5px';
+        link.style.color = 'white';
+
+        // Establecer el contenido del enlace
+        link.innerHTML = 'En los montes';
+
+        // Agregar el enlace al div
+        div.appendChild(link);
+
+        // Agregar el div al documento
+        document.body.appendChild(div);
+
+        // Obtener el elemento <input> por su ID
+        var input = document.getElementById('buscar');
+
+        // Dejar el valor del input vacío
+        input.value = '';
+
+        // Guardar el contenido del <div> en el Local Storage
+        localStorage.setItem('divContent', div.innerHTML);
+    }
+    
+}
+
 
 function buscarCancion(){
     let cancion = document.getElementById("buscar").value;
