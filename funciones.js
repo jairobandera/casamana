@@ -2,155 +2,91 @@ function imprimir(){
     print();
 }
 
-// Función para eliminar todos los datos del Local Storage
-function eliminarLocalStorage() {
-    localStorage.clear();
-}
-
-// Función para buscar y mostrar los datos almacenados en el Local Storage
-function mostrarDatosLocalStorage() {
-    // Obtener los datos del Local Storage
-    var datos = localStorage.getItem('divContent');
+function mostrarCancionesArchivoTxt(url) {
+    fetch(url)
+      .then(function(response) {
+        if (response.ok) {
+          return response.text();
+        } else {
+          throw new Error('Error al cargar el archivo.');
+        }
+      })
+      .then(function(texto) {
+        var canciones = texto.split('\n'); // Dividir el texto en canciones por salto de línea
   
-    // Verificar si hay datos almacenados
-    if (datos) {
-      // Crear el elemento <div>
-      var divTemporal = document.createElement('div');
-
-      // Establecer las clases CSS
-      divTemporal.className = 'list-group myUL';
-
-      // Establecer el estilo inline
-      divTemporal.style.width = '45%';
+        // Obtener el elemento contenedor donde se mostrarán las canciones
+        var contenedor = document.getElementById('contenedor-canciones');
   
-      // Asignar los datos del Local Storage al contenido del div temporal
-      divTemporal.innerHTML = datos;
+        // Limpiar el contenedor antes de agregar las canciones
+        contenedor.innerHTML = '';
   
-      // Obtener el elemento <div> deseado
-      var divAlmacenado = divTemporal.firstChild;
+        // Recorrer todas las canciones
+        canciones.forEach(function(cancion, index) {
+          // Eliminar los espacios en blanco al inicio y al final de la canción
+          cancion = cancion.trim();
   
-      // Agregar el elemento <div> al documento
-      document.body.appendChild(divAlmacenado);
-    }
+          // Verificar si la canción no está vacía
+          if (cancion !== '') {
+            // Crear el elemento <a>
+            var link = document.createElement('a');
+            //quitar espacios en blanco a cancion
+            cancionSinEspacios = cancion.replace(/ /g, "").toLowerCase();
+  
+            // Establecer el atributo href
+            link.href = 'plantillas/' + cancionSinEspacios + '.html';
+  
+            // Establecer las clases CSS
+            link.className = 'list-group-item list-group-item-action text-center';
+  
+            // Establecer los estilos inline
+            link.style.backgroundColor = '#198754';
+            link.style.marginBottom = '10px';
+            link.style.marginLeft = '5px';
+            link.style.color = 'white';
+  
+            // Establecer el contenido del enlace
+            link.innerHTML = cancion;
+  
+            // Agregar el enlace al contenedor
+            contenedor.appendChild(link);
+          }
+        });
+      })
+      .catch(function(error) {
+        console.log('Error:', error.message);
+      });
   }
   
-  // Llamar a la función para mostrar los datos del Local Storage
-  mostrarDatosLocalStorage();
+  // Ejemplo de uso
+  mostrarCancionesArchivoTxt('canciones.txt');
   
-
-function guardarCanciones(){
-    let cancion = document.getElementById("buscar").value;
-    cancion = cancion.replace(/ /g, "").toLowerCase();
-
-    if(cancion == 'enlosmontes'){
-        // Crear el elemento <div>
-        var div = document.createElement('div');
-
-        // Establecer las clases CSS
-        div.className = 'list-group myUL';
-
-        // Establecer el estilo inline
-        div.style.width = '45%';
-
-        // Crear el elemento <a>
-        var link = document.createElement('a');
-
-        // Establecer el atributo href
-        link.href = 'plantillas/enlosmontes.html';
-
-        // Establecer las clases CSS
-        link.className = 'list-group-item list-group-item-action text-center';
-
-        // Establecer los estilos inline
-        link.style.backgroundColor = '#198754';
-        link.style.marginBottom = '5px';
-        link.style.marginLeft = '5px';
-        link.style.color = 'white';
-
-        // Establecer el contenido del enlace
-        link.innerHTML = 'En los montes';
-
-        // Agregar el enlace al div
-        div.appendChild(link);
-
-        // Agregar el div al documento
-        document.body.appendChild(div);
-
-        // Obtener el elemento <input> por su ID
-        var input = document.getElementById('buscar');
-
-        // Dejar el valor del input vacío
-        input.value = '';
-
-        // Guardar el contenido del <div> en el Local Storage
-        localStorage.setItem('divContent', div.innerHTML);
-    }
-    
-}
-
+  
+  
+  
+  
 
 function buscarCancion(){
     let cancion = document.getElementById("buscar").value;
     cancion = cancion.replace(/ /g, "").toLowerCase();
 
-    if(cancion == 'enlosmontes'){
-        location.href ="plantillas/enlosmontes.html";
-        }else if(cancion == 'medeleitoenti'){
-          location.href="plantillas/medeleitoenti.html";
-        }else if(cancion == 'unadorador'){
-            location.href="plantillas/unadorador.html";
-        }else if(cancion == 'haylibertad'){
-            location.href="plantillas/haylibertad.html";
-        }else if(cancion == 'queseabraelcielo'){
-            location.href="plantillas/queseabraelcielo.html";
-        }else if(cancion == 'cuanbelloeselseñor'){
-            location.href="plantillas/cuanbelloeselsenior.html";
-        }else if(cancion == 'algoestacayendoaqui'){
-            location.href="plantillas/estacayendo.html";
-        }else if(cancion == 'entupresenciadanzamos'){
-            location.href="plantillas/entupresenciadanzamos.html";
-        }else if(cancion == 'libresoy'){
-            location.href="plantillas/libresoy.html";
-        }else{
-            location.href="index.html";
-        }
+    fetch('plantillas/'+cancion+'.html')
+    .then(function(response) {
+    if (response.ok) {
+        location.href="plantillas/"+cancion+".html";
+    }
+    else {
+        console.log("La canción no existe");
+    }
+    });
 
 }
 
-function buscarCancion2(){
-    let input = document.getElementById("buscar");
-
-    input.addEventListener("keyup", function(event) {
-        // Number 13 is the "Enter" key on the keyboard
-        if (event.keyCode === 13) {
-
-        let cancion = document.getElementById("buscar").value;
-        cancion = cancion.replace(/ /g, "").toLowerCase();
-
-        if(cancion == 'enlosmontes'){
-            location.href ="plantillas/enlosmontes.html";
-            }else if(cancion == 'medeleitoenti'){
-              location.href="plantillas/medeleitoenti.html";
-            }else if(cancion == 'unadorador'){
-                location.href="plantillas/unadorador.html";
-            }else if(cancion == 'haylibertad'){
-                location.href="plantillas/haylibertad.html";
-            }else if(cancion == 'queseabraelcielo'){
-                location.href="plantillas/queseabraelcielo.html";
-            }else if(cancion == 'cuanbelloeselseñor'){
-                location.href="plantillas/cuanbelloeselsenior.html";
-            }else if(cancion == 'algoestacayendoaqui'){
-                location.href="plantillas/estacayendo.html";
-            }else if(cancion == 'entupresenciadanzamos'){
-                location.href="plantillas/entupresenciadanzamos.html";
-            }else if(cancion == 'libresoy'){
-                location.href="plantillas/libresoy.html";
-            }else{
-                location.href="index.html";
-           }
-        }
-});
-}
+// Agregar el controlador de eventos al presionar la tecla Enter
+document.getElementById("buscar").addEventListener("keypress", function(event) {
+    if (event.key === "Enter") {
+        buscarCancion();
+    }
+  });
 
 
 function cambiarMas(){
