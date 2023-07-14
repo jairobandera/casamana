@@ -2,6 +2,8 @@ function imprimir(){
     print();
 }
 
+
+
 function mostrarCancionesArchivoTxt(url) {
     fetch(url)
       .then(function(response) {
@@ -58,11 +60,7 @@ function mostrarCancionesArchivoTxt(url) {
   }
   
   // Ejemplo de uso
-  mostrarCancionesArchivoTxt('canciones.txt');
-  
-  
-  
-  
+  mostrarCancionesArchivoTxt('canciones.txt');  
   
 
 function buscarCancion(){

@@ -23,6 +23,8 @@ function mostrarDatosLocalStorage() {
   
         // Establecer las clases CSS
         divTemporal.className = 'list-group myUL';
+        divTemporal.style.display = 'block';
+        divTemporal.style.margin = '0 auto';
   
         // Establecer el estilo inline
         divTemporal.style.width = '45%';
@@ -59,6 +61,8 @@ fetch('plantillas/'+cancion+'.html')
 
         // Establecer el estilo inline
         div.style.width = '45%';
+        div.style.display = 'block';
+        div.style.margin = '0 auto';
 
         // Crear el elemento <a>
         var link = document.createElement('a');
