@@ -2,8 +2,6 @@ function imprimir(){
     print();
 }
 
-
-
 function mostrarCancionesArchivoTxt(url) {
     fetch(url)
       .then(function(response) {
